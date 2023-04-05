@@ -1,6 +1,6 @@
 Summary: LINSTOR packages from the LINSTOR XCP-ng repository
 Name: xcp-ng-release-linstor
-Version: 1.2
+Version: 1.3
 Release: 1%{?dist}
 License: GPLv2
 Source0: xcp-ng-linstor.repo
@@ -24,6 +24,10 @@ sed -i "s/\# \(global_filter\)[[:space:]]*=.*/\1 = [ \"r|^\/dev\/drbd.*|\" ]/g" 
 %{_prefix}/lib/modprobe.d/drbd.conf
 
 %changelog
+* Wed Apr 05 2023 Ronan Abhamon <ronan.abhamon@vates.fr> - 1.3-1
+- Use a new repository on repo.vates.tech.
+- Add a testing repository in xcp-ng-linstor.repo.
+
 * Mon Mar 13 2023 Ronan Abhamon <ronan.abhamon@vates.fr> - 1.2-1
 - Add kernel module drbd.conf to prevent idle TCP connections from freezing.
 
