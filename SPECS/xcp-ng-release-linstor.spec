@@ -1,6 +1,6 @@
 Summary: LINSTOR packages from the LINSTOR XCP-ng repository
 Name: xcp-ng-release-linstor
-Version: 1.3
+Version: 1.4
 Release: 1%{?dist}
 License: GPLv2
 Source0: xcp-ng-linstor.repo
@@ -24,6 +24,9 @@ sed -i "s/\# \(global_filter\)[[:space:]]*=.*/\1 = [ \"r|^\/dev\/drbd.*|\" ]/g" 
 %{_prefix}/lib/modprobe.d/drbd.conf
 
 %changelog
+* Tue Jul 18 2023 Ronan Abhamon <ronan.abhamon@vates.fr> - 1.4-1
+- Change repo URLs for XCP-ng 8.3.
+
 * Wed Apr 05 2023 Ronan Abhamon <ronan.abhamon@vates.fr> - 1.3-1
 - Use a new repository on repo.vates.tech.
 - Add a testing repository in xcp-ng-linstor.repo.
