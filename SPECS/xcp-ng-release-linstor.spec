@@ -1,10 +1,9 @@
 Summary: LINSTOR packages from the LINSTOR XCP-ng repository
 Name: xcp-ng-release-linstor
-Version: 1.4
-Release: 2%{?dist}
+Version: 1.5
+Release: 1%{?dist}
 License: GPLv2
 Source0: xcp-ng-linstor.repo
-Source1: drbd.conf
 BuildArch: noarch
 
 %description
@@ -12,13 +11,14 @@ yum configuration for LINSTOR packages from the LINSTOR XCP-ng repository.
 
 %install
 install -D -m 644 %{SOURCE0} %{buildroot}%{_sysconfdir}/yum.repos.d/xcp-ng-linstor.repo
-install -D -m 644 %{SOURCE1} %{buildroot}%{_prefix}/lib/modprobe.d/drbd.conf
 
 %files
 %config(noreplace) %{_sysconfdir}/yum.repos.d/xcp-ng-linstor.repo
-%{_prefix}/lib/modprobe.d/drbd.conf
 
 %changelog
+* Mon Jun 08 2026 Mathieu Labourier <mathieu.labourier@vates.tech> - 1.5-1
+- Remove drbd.conf file, now included in the kmod-drbd package
+
 * Tue Nov 05 2024 Ronan Abhamon <ronan.abhamon@vates.tech> - 1.4-2
 - Remove LVM configuration to never scan DRBD devices (moved in DRBD RPM)
 
